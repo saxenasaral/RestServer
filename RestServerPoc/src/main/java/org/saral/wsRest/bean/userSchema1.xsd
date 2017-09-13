@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="user" type="User"/>
+
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element name="Address" type="address" maxOccurs="unbounded"/>
+      <xs:element name="item" type="offer" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:int" use="required"/>
+    <xs:attribute name="name" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="address">
+    <xs:sequence>
+      <xs:element name="houseNo" type="xs:string" minOccurs="0"/>
+      <xs:element name="street" type="xs:string" minOccurs="0"/>
+      <xs:element name="city" type="xs:string" minOccurs="0"/>
+      <xs:element name="state" type="xs:string" minOccurs="0"/>
+      <xs:element name="country" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="offer">
+    <xs:sequence>
+      <xs:element name="offer" type="subscriberOffer" minOccurs="0"/>
+      <xs:element name="otherOffer" type="misseleneousOffer" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="subscriberOffer">
+    <xs:sequence>
+      <xs:element name="set" type="offerSet" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="misseleneousOffer">
+    <xs:sequence>
+      <xs:element name="callerTune" type="xs:string" minOccurs="0"/>
+      <xs:element name="MissedCallAlert" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="offerSet">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="POSTPAID"/>
+      <xs:enumeration value="PREPAID"/>
+      <xs:enumeration value="HYBRID"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+

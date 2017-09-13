@@ -1,0 +1,9 @@
+org\saral\wsRest\RestPoc\MyResource.class
+org\saral\wsRest\service\UserService.class
+org\saral\wsRest\bean\User.class
+org\saral\wsRest\bean\User$Address.class
+org\saral\wsRest\constants\OfferSet.class
+org\saral\wsRest\bean\User$Offer$SubscriberOffer.class
+org\saral\wsRest\bean\User$Offer$MisseleneousOffer.class
+org\saral\wsRest\bean\User$Offer.class
+org\saral\wsRest\resource\UserResource.class
